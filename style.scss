@@ -1,0 +1,60 @@
+label.method,
+label.card {
+    display: inline-flex;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 5px;
+    margin: 5px;
+
+    width: 150px;
+    height: 30px;
+    justify-content: center;
+    font-family: Arial;
+    letter-spacing: 1px;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap;
+    transition: all 0.2s ease-in-out, color 0.2s;
+
+    cursor: pointer;
+
+    img {
+        max-width: 80px;
+        height: 25px;
+        // transform: ;
+    }
+    span {
+        $a: 10px;
+        margin: 0 $a 0 $a;
+        font-size: 14px;
+    }
+    input {
+        appearance: none;
+    }
+
+    &.active,
+    &:hover {
+        color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 18px 0px rgba(0, 0, 0, 0.3);
+    }
+    &.active {
+        color: black;
+        box-shadow: 0 0 18px 0px rgba(0, 0, 0, 0.5);
+    }
+    &:active {
+        color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 1px 0px rgba(0, 0, 0, 01);
+    }
+}
+
+label.method {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    flex-direction: column;
+    & > span {
+        font-size: 20px;
+    }
+}
