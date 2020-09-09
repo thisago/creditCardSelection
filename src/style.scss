@@ -1,0 +1,121 @@
+label.module *,
+label.module *::before,
+label.module *::after {
+    box-sizing: border-box;
+}
+
+label.parcel,
+label.module,
+label.card {
+    display: inline-flex;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 5px;
+    margin: 20px;
+
+    width: 180px;
+    height: 50px;
+    justify-content: center;
+    font-family: Arial;
+    letter-spacing: 1px;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap;
+    transition: all 0.15s ease-in-out, color 0.2s, width 0.5s ease-out;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center;
+
+    cursor: pointer;
+
+    img {
+        max-width: 80px;
+        height: 25px;
+    }
+    span {
+        $a: 10px;
+        margin: 0 $a 0 $a;
+        font-size: 14px;
+    }
+    input {
+        appearance: none;
+    }
+
+    &.active,
+    &:hover {
+        color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 18px 0px rgba(0, 0, 0, 0.3);
+    }
+    &.active {
+        color: black;
+        box-shadow: 0 0 18px 0px rgba(0, 0, 0, 0.5);
+    }
+    &:active {
+        color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 1px 0px rgba(0, 0, 0, 01);
+    }
+    div.cards {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &.hide {
+            // flex-wrap: unset;
+            label.card:not(.active) {
+                width: 100px;
+                border: 0;
+                &:hover {
+                    box-shadow: none;
+                }
+                img {
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+label.module {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    flex-direction: column;
+    cursor: default;
+
+    & > span {
+        font-size: 20px;
+    }
+    &.active,
+    &:hover {
+        color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+    }
+    &.active {
+        color: black;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
+    }
+    &:active {
+        color: rgba(0, 0, 0, 0.8);
+        // border-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+    }
+}
+
+div.method {
+    transition: 1s;
+    overflow: hidden;
+
+    & > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+
+        & > span {
+            font-size: 20px;
+        }
+    }
+    &.hidden {
+        height: 0px;
+    }
+}
