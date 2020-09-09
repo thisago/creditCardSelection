@@ -1,11 +1,11 @@
-label.module *,
-label.module *::before,
-label.module *::after {
+div.module *,
+div.module *::before,
+div.module *::after {
     box-sizing: border-box;
 }
 
 label.parcel,
-label.module,
+div.module,
 label.card {
     display: inline-flex;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -75,7 +75,7 @@ label.card {
         }
     }
 }
-label.module {
+div.module {
     width: auto;
     height: auto;
     overflow: visible;
@@ -104,18 +104,21 @@ label.module {
 div.method {
     transition: 1s;
     overflow: hidden;
+    margin-top: 10px;
 
     & > div {
         display: flex;
         align-items: center;
         flex-direction: column;
         position: relative;
+        margin-top: 20px;
 
         & > span {
             font-size: 20px;
         }
     }
     &.hidden {
+        margin-top: 0px;
         height: 0px;
     }
 }
