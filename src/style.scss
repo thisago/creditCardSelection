@@ -2,6 +2,7 @@ div.module *,
 div.module *::before,
 div.module *::after {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 label.parcel,
@@ -24,7 +25,6 @@ label.card {
     color: rgba(0, 0, 0, 0.5);
     flex-wrap: wrap;
     transition: all 0.15s ease-in-out, color 0.2s, width 0.5s ease-out;
-    -webkit-tap-highlight-color: transparent;
     text-align: center;
 
     cursor: pointer;
@@ -102,9 +102,10 @@ div.module {
 }
 
 div.method {
-    transition: 1s;
     overflow: hidden;
+    transition: all 1s;
     margin-top: 10px;
+    max-height: 1256px;
 
     & > div {
         display: flex;
@@ -118,7 +119,8 @@ div.method {
         }
     }
     &.hidden {
-        margin-top: 0px;
-        height: 0px;
+        // margin-top: 0;
+        // opacity: 0;
+        max-height: 0;
     }
 }
