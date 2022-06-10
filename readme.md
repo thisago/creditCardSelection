@@ -7,4 +7,5 @@ See the [online preview](https://thisago.github.io/creditCardSelection/src/)
 ---
 
 ## License
+
 GPL-3
