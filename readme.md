@@ -2,7 +2,7 @@
 
 Credit and debit card selection made in Typescript
 
-See the [online preview](https://thisago.github.io/creditCardSelection/)
+See the [online preview](https://thisago.github.io/creditCardSelection/src/)
 
 ---
 
