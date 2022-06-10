@@ -1,3 +1,9 @@
+$color: black;
+$Bcolor: white;
+// html {
+//     scroll-behavior: smooth;
+// }
+
 div.module *,
 div.module *::before,
 div.module *::after {
@@ -9,20 +15,20 @@ label.parcel,
 div.module,
 label.card {
     display: inline-flex;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba($color, 0.15);
     padding: 10px;
-    align-items: center;
     flex-direction: row;
     border-radius: 5px;
     margin: 20px;
 
+    justify-content: center;
+    align-items: center;
     width: 180px;
     height: 50px;
-    justify-content: center;
     font-family: Arial;
     letter-spacing: 1px;
     user-select: none;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba($color, 0.5);
     flex-wrap: wrap;
     transition: all 0.15s ease-in-out, color 0.2s, width 0.5s ease-out;
     text-align: center;
@@ -30,12 +36,13 @@ label.card {
     cursor: pointer;
 
     img {
-        max-width: 80px;
-        height: 25px;
+        transition: all 0.5s;
+        max-height: 30px;
+        max-width: 36px;
     }
     span {
-        $a: 10px;
-        margin: 0 $a 0 $a;
+        transition: all 0.5s;
+        margin: 0 10px 0 10px;
         font-size: 14px;
     }
     input {
@@ -44,16 +51,16 @@ label.card {
 
     &.active,
     &:hover {
-        color: rgba(0, 0, 0, 0.6);
-        box-shadow: 0 0 18px 0px rgba(0, 0, 0, 0.3);
+        color: rgba($color, 0.6);
+        box-shadow: 0 0 18px 0px rgba($color, 0.3);
     }
     &.active {
-        color: black;
-        box-shadow: 0 0 18px 0px rgba(0, 0, 0, 0.5);
+        color: $color;
+        box-shadow: 0 0 18px 0px rgba($color, 0.5);
     }
     &:active {
-        color: rgba(0, 0, 0, 0.8);
-        box-shadow: 0 0 1px 0px rgba(0, 0, 0, 01);
+        color: rgba($color, 0.8);
+        box-shadow: 0 0 1px 0px rgba($color, 01);
     }
     div.cards {
         width: 100%;
@@ -61,15 +68,32 @@ label.card {
         flex-wrap: wrap;
         justify-content: center;
         &.hide {
-            // flex-wrap: unset;
-            label.card:not(.active) {
-                width: 100px;
-                border: 0;
-                &:hover {
-                    box-shadow: none;
+            label.card {
+                &.active {
+                    img {
+                        max-height: 30px;
+                        max-width: 40px;
+                    }
+                    span {
+                        font-size: 16;
+                    }
                 }
-                img {
-                    height: 20px;
+                &:not(.active) {
+                    width: 100px;
+                    border: 0;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+
+                    &:hover {
+                        box-shadow: none;
+                    }
+                    img {
+                        max-height: 35px;
+                        max-width: 36px;
+                    }
+                    span {
+                        margin-top: 5px;
+                    }
                 }
             }
         }
@@ -81,23 +105,39 @@ div.module {
     overflow: visible;
     flex-direction: column;
     cursor: default;
+    position: relative;
 
     & > span {
         font-size: 20px;
     }
     &.active,
     &:hover {
-        color: rgba(0, 0, 0, 0.6);
-        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+        color: rgba($color, 0.6);
+        box-shadow: 0 0 20px 5px rgba($color, 0.5);
     }
     &.active {
-        color: black;
-        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
+        color: $color;
+        box-shadow: 0 0 20px 5px rgba($color, 0.7);
     }
     &:active {
-        color: rgba(0, 0, 0, 0.8);
-        // border-color: rgba(0, 0, 0, 0.6);
-        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+        color: rgba($color, 0.8);
+        // border-color: rgba($color, 0.6);
+        box-shadow: 0 0 15px 1px rgba($color, 0.5);
+    }
+
+    div.message {
+        height: 18px;
+        font-size: 16px;
+        font-weight: bold;
+        position: relative;
+        top: 5px;
+        margin-bottom: -5px;
+        transition: all 0.5s;
+
+        &.hide {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
     }
 }
 
@@ -119,8 +159,10 @@ div.method {
         }
     }
     &.hidden {
-        // margin-top: 0;
-        // opacity: 0;
         max-height: 0;
     }
+}
+
+body {
+    background-color: $Bcolor;
 }

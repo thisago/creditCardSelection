@@ -2,127 +2,140 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card selector</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card selector</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      height: 100vh;
+    }
+  </style>
 </head>
 
 <body>
-    <form module="get">
-        <div class="module"
-            data-configuration='{ "constants": { "currency": { "before": "R$", "after": "" }, "text": { "global": { "credit": "Crédito", "debit": "Débito" }, "singular": { "before": "", "middle": " parcela de ", "end": "" }, "plural": { "before": "", "middle": " parcelas de ", "end": "" } } } }'>
-            <span>Pagamento por cartão - Cielo</span>
-            <input type="radio" name="type" value="cielo" />
-            <div class="cards">
-                <label class="card" data-parcels='{ "credit": { "1": 100}, "debit": { "1": 99 } }'>
-                    <img src="img/visa.png" />
-                    <span>Visa</span>
-                    <input type="checkbox" name="card" value="visa" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50}, "debit": { "1": 99 } }'>
-                    <img src="img/mastercard.png" />
-                    <span>Mastercard</span>
-                    <input type="checkbox" name="card" value="mastercard" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/amex.png" />
-                    <span>Amex</span>
-                    <input type="checkbox" name="card" value="amex" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/discover.jpg" />
-                    <span>Discover</span>
-                    <input type="checkbox" name="card" value="discover" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 10021, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/banescard.png" />
-                    <span>Banescard</span>
-                    <input type="checkbox" name="card" value="banescard" />
-                </label>
-                <label class="card"
-                    data-parcels='{ "credit": { "1": 100, "23": 50, "4": 225 }, "debit": { "1": 99, "4": 25 } }'>
-                    <img src="img/diners.png" />
-                    <span>Diners</span>
-                    <input type="checkbox" name="card" value="diners" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/elo.png" />
-                    <span>Elo</span>
-                    <input type="checkbox" name="card" value="elo" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/hipercard.png" />
-                    <span>Hipercard</span>
-                    <input type="checkbox" name="card" value="hipercard" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/jcb.png" />
-                    <span>JCB</span>
-                    <input type="checkbox" name="card" value="jcb" />
-                </label>
-            </div>
-            <div class="method hidden"></div>
-        </div>
-        <div class="module"
-            data-configuration='{ "constants": { "currency": { "before": "$", "after": "" }, "text": { "global": { "credit": "Credit", "debit": "Debit" }, "singular": { "before": "", "middle": " parcel of ", "end": "" }, "plural": { "before": "", "middle": " parcels of ", "end": "" } } } }'>
-            <span>Pagamento por cartão - Cielo (2)</span>
-            <input type="radio" name="type" value="cielo2" />
-            <div class="cards">
-                <label class="card" data-parcels='{ "credit": { "1": 100}, "debit": { "1": 99 } }'>
-                    <img src="img/visa.png" />
-                    <span>Visa</span>
-                    <input type="checkbox" name="card" value="visa" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50}, "debit": { "1": 99 } }'>
-                    <img src="img/mastercard.png" />
-                    <span>Mastercard</span>
-                    <input type="checkbox" name="card" value="mastercard" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/amex.png" />
-                    <span>Amex</span>
-                    <input type="checkbox" name="card" value="amex" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/discover.jpg" />
-                    <span>Discover</span>
-                    <input type="checkbox" name="card" value="discover" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 10021, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/banescard.png" />
-                    <span>Banescard</span>
-                    <input type="checkbox" name="card" value="banescard" />
-                </label>
-                <label class="card"
-                    data-parcels='{ "credit": { "1": 100, "23": 50, "4": 225 }, "debit": { "1": 99, "4": 25 } }'>
-                    <img src="img/diners.png" />
-                    <span>Diners</span>
-                    <input type="checkbox" name="card" value="diners" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/elo.png" />
-                    <span>Elo</span>
-                    <input type="checkbox" name="card" value="elo" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/hipercard.png" />
-                    <span>Hipercard</span>
-                    <input type="checkbox" name="card" value="hipercard" />
-                </label>
-                <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
-                    <img src="img/jcb.png" />
-                    <span>JCB</span>
-                    <input type="checkbox" name="card" value="jcb" />
-                </label>
-            </div>
-            <div class="method hidden"></div>
-        </div>
-        <button type="submit">Send</button>
-    </form>
-    <div class="form"></div>
+  <form module="get">
+    <div class="module"
+      data-configuration='{ "constants": { "error": { "invalid": "Please select all needed items." }, "currency": { "before": "R$", "after": "" }, "text": { "global": { "credit": "Crédito", "debit": "Débito" }, "singular": { "before": "", "middle": " parcela de ", "end": "" }, "plural": { "before": "", "middle": " parcelas de ", "end": "" } } } }'>
+      <span>Card payment</span>
+      <div class="message"></div>
+      <input type="radio" name="type" value="cielo" />
+      <div class="cards">
+        <label class="card" data-parcels='{ "credit": { "1": 100}, "debit": { "1": 99 } }'>
+          <img src="img/visa.png" />
+          <span>Visa</span>
+          <input type="checkbox" name="card" value="visa" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50}, "debit": { "1": 99 } }'>
+          <img src="img/mastercard.png" />
+          <span>Mastercard</span>
+          <input type="checkbox" name="card" value="mastercard" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/amex.png" />
+          <span>Amex</span>
+          <input type="checkbox" name="card" value="amex" />
+        </label>
+        <label class="card"
+          data-parcels='{ "credit": { "4": 25 }, "debit": { "1": { "price": 99, "message": "<font color=\"red\">Erro, nao suportado</font>" } } }'>
+          <img src="img/discover.png" />
+          <span>Discover</span>
+          <input type="checkbox" name="card" value="discover" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 10021, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/banescard.png" />
+          <span>Banescard</span>
+          <input type="checkbox" name="card" value="banescard" />
+        </label>
+        <label class="card"
+          data-parcels='{ "credit": { "1": 100, "23": 50, "4": 225 }, "debit": { "1": 99, "4": 25 } }'>
+          <img src="img/dinersclub.png" />
+          <span>Diners Club</span>
+          <input type="checkbox" name="card" value="diners" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/elo.svg" />
+          <span>Elo</span>
+          <input type="checkbox" name="card" value="elo" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/hipercard.png" />
+          <span>Hipercard</span>
+          <input type="checkbox" name="card" value="hipercard" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/jcb.png" />
+          <span>JCB</span>
+          <input type="checkbox" name="card" value="jcb" />
+        </label>
+      </div>
+      <div class="method hidden"></div>
+    </div>
+    <div class="module"
+      data-configuration='{ "constants": { "error": { "invalid": "Please select all needed items." }, "currency": { "before": "$", "after": "" }, "text": { "global": { "credit": "Credit", "debit": "Debit" }, "singular": { "before": "", "middle": " parcel of ", "end": "" }, "plural": { "before": "", "middle": " parcels of ", "end": "" } } } }'>
+      <span>Card payment</span>
+      <div class="message"></div>
+      <input type="radio" name="type" value="cielo2" />
+      <div class="cards">
+        <label class="card" data-parcels='{ "credit": { "1": 1000, "10": 10}, "debit": { "1": 99 } }'>
+          <img src="img/visa.png" />
+          <span>Visa</span>
+          <input type="checkbox" name="card" value="visa" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50}, "debit": { "1": 99 } }'>
+          <img src="img/mastercard.png" />
+          <span>Mastercard</span>
+          <input type="checkbox" name="card" value="mastercard" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/amex.png" />
+          <span>Amex</span>
+          <input type="checkbox" name="card" value="amex" />
+        </label>
+        <label class="card"
+          data-parcels='{ "credit": { "4": 25 }, "debit": { "1": { "price": 99, "message": "<font color=\"red\">Warning: This is a alert</font>" } } }'>
+          <img src="img/discover.png" />
+          <span>Discover</span>
+          <input type="checkbox" name="card" value="discover" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 10021, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/banescard.png" />
+          <span>Banescard</span>
+          <input type="checkbox" name="card" value="banescard" />
+        </label>
+        <label class="card"
+          data-parcels='{ "credit": { "1": 100, "23": 50, "4": 225 }, "debit": { "1": 99, "4": 25 } }'>
+          <img src="img/dinersclub.png" />
+          <span>Diners Club</span>
+          <input type="checkbox" name="card" value="diners" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/elo.svg" />
+          <span>Elo</span>
+          <input type="checkbox" name="card" value="elo" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/hipercard.png" />
+          <span>Hipercard</span>
+          <input type="checkbox" name="card" value="hipercard" />
+        </label>
+        <label class="card" data-parcels='{ "credit": { "1": 100, "2": 50, "4": 25 }, "debit": { "1": 99 } }'>
+          <img src="img/jcb.png" />
+          <span>JCB</span>
+          <input type="checkbox" name="card" value="jcb" />
+        </label>
+      </div>
+    </div>
+    <button type="submit">Send</button>
+  </form>
+  <div class="form"></div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
